@@ -1,0 +1,1563 @@
+{
+  "verification_date": "2026-10-29",
+  "execution_environment": "Python stdlib sqlite3 in-memory; not MySQL or Power BI Desktop",
+  "scope": "Current uploaded SQL SELECT statements on original CSV data. MySQL MONTH and MONTHNAME reproduced with functions. BOM-mojibake column aliases model the documented import headers. facilities uses the source department lookup; location is rebuilt from source hierarchy. Imported table state and DAX results are not verified.",
+  "source_sha256": {
+    "HC_Clinical_Transactions.xlsx - Prescriptions.csv": "bb81b601f1d4e83cd9ee9eebee4e7bf921e5501f02fd316ce1f39a1f023bf9a4",
+    "HC_Districts.csv": "18cc052d8cf9de499b64648acc37c86006df22bb863314173e377c698a20dd55",
+    "HC_Clinical_Transactions.xlsx - Appointments.csv": "dd4b22034290454761f4b0b1eb839251f61500a1eca2c5f1b7a1495183587c5a",
+    "HC_Revenue_Summary.csv": "1c107acece2f76c1ba9a89f9e893bcc421c0d851e9bd4114a60e1e5782dcd0f6",
+    "HC_Radiographer.csv": "57d7284b96cba6121a3b3dbd8e6df047f38d99397aea545f2062c37cd3a2326c",
+    "HC_Doctor(1).csv": "680f7cdf207ff118488305a5033d462b069c66d74b24bd99ec304411c0836e11",
+    "Insurance_Claims.csv": "953193fa29bf96cc786a5440775f6fe304e62b51edfc1b115775198a4e2d1e58",
+    "HC_Administrative_Staff.csv": "d3fb68cef87a9f514f4e2faba4ccca98267e1c28c2f00ebd5e95513d5c6e279c",
+    "HC_Payments.csv": "476eece4e903c2e2acbe79ad76f4c93e5989bcd2596b9ccc72d9fb2ff241dddb",
+    "HC_Facility_Master_Data.xlsx - Beds.csv": "28a85a539bd8c783659d0e31142da23fc2163eb24c0a563692a5ce762f93dc29",
+    "HC_Provinces.csv": "ac50b8c0dda7f3f49e216eb05c30d02d6ca3503fe02213686e177c56133e2e6d",
+    "Pharmacist.csv": "44e893b20ddc2189c768a48f27906a4adf09d1cc73a5943b380372b35a41494f",
+    "HC_Billing.csv": "a1c1bad9977967b4475a7556f31925bf1e3954c0640439165bbef92b133a44fb",
+    "rwanda healthcare.sql": "db388ae26a324055f713c21c9a4b3b57e4a32cdcb4c6f6e63278c9d8c08c44f1",
+    "HC_Facility_Master_Data.xlsx - Departments.csv": "7b384ebf33153954c8cad9ad5058aa56e583853e9dc318c94b7faad1a90f1363",
+    "HC_Facility_Master_Data.xlsx - Medical_Equipment.csv": "56fa95d62be0ed4b0eb5b781294a234ab24698bac7db9af062b50b62370cd805",
+    "HC_Villages.csv": "b2f9f538f469715b5ed075d2ff0d25dd27a444dc71adfdaf8515dc6df3521782",
+    "HC_Clinical_Transactions.xlsx - Referrals.csv": "547e02525734df3dfba95ea861393c1e86710a2a576d934db20f781d3202f819",
+    "HC_Clinical_Transactions.xlsx - Admissions.csv": "e9bd997154d04cc023be4feb0f092fb7edf5ca1cd3048950df39e12812947f9e",
+    "Laboratory_Scientist.csv": "d9ffde2cc3409b8e4219aa781b5409e0457423ad8c5800306232488cb04dd1da",
+    "HC_Clinical_Transactions.xlsx - Laboratory_Tests.csv": "0b36e229efb6c18572563df32b9d22cb2a4de87061302ad8e12c2e73b229bfed",
+    "HC_Sectors.csv": "3bb98f5c7f88ebe2d6cbd88794734aa89675baa6770e85ac0dad5ed28210b7ab",
+    "rwanda(1).pbix": "95dd69114b40957e0fcfa01e947e2545e40646f3dfdf952ce759948b685f8b49",
+    "HC_Clinical_Transactions.xlsx - Diagnoses.csv": "7a9270a237c2631a20c04376a2ce979de497f384909b0ef45228442f56d1e22c",
+    "HC_Patients.csv": "b517e71a72ff695c3c345d9c14a6f07e59b1e855cdf041621daf88e6e09271e5",
+    "HC_Nurse.csv": "1f644dacd08b63d532857b84fc833a9d35f1c0c0628c2f7341ab7fee05cd7459",
+    "HC_Patient_Feedback.csv": "85d955a4ba07bb0ef0a64c0d9451ea78376cae2b25a3afbcf2d84fae1acb568f",
+    "HC_Doctor.csv": "680f7cdf207ff118488305a5033d462b069c66d74b24bd99ec304411c0836e11"
+  },
+  "source_files_unchanged": true,
+  "checks": {
+    "clinical_events": {
+      "Admission": 5000,
+      "Diagnosis": 5000,
+      "Lab test": 5000,
+      "Prescription": 5000
+    },
+    "clinical_overall": 20000,
+    "department_lookup_ambiguities": [],
+    "coverage": {
+      "billing": {
+        "total": 60000,
+        "matched": 5000,
+        "unmatched": 55000
+      },
+      "diagnoses": {
+        "total": 5000,
+        "matched": 5000,
+        "unmatched": 0
+      },
+      "labtests": {
+        "total": 5000,
+        "matched": 2272,
+        "unmatched": 2728
+      },
+      "prescriptions": {
+        "total": 5000,
+        "matched": 4003,
+        "unmatched": 997
+      },
+      "admissions": {
+        "total": 5000,
+        "matched": 586,
+        "unmatched": 4414
+      },
+      "referrals": {
+        "total": 4708,
+        "matched": 415,
+        "unmatched": 4293
+      },
+      "patient_feedback": {
+        "total": 21064,
+        "matched": 1756,
+        "unmatched": 19308
+      }
+    },
+    "financial": {
+      "billed": "9309401961",
+      "collected": "8389454556",
+      "balance": "919947405",
+      "balance_positive_bills": 11887,
+      "bill_balance_sum": "919947405",
+      "linked_collections": "694551320",
+      "unattributed_collections": "7694903236",
+      "reported_revenue": "1132677500",
+      "claims": "4881863293.88",
+      "status_rule_differences": 39961,
+      "unmatched_payment_bill_ids": 0,
+      "duplicate_payment_bill_ids": 0,
+      "q31_total": 8389454556,
+      "q32_total": 8389454556
+    },
+    "feedback": {
+      "count": 21064,
+      "average": "2.99",
+      "linked_count": 1756,
+      "linked_average": "2.93",
+      "poor_total": 5283,
+      "poor_linked": 422,
+      "facility_rankings": [
+        {
+          "FacilityID": "HF011",
+          "responses": 91,
+          "average_rating": 3.19
+        },
+        {
+          "FacilityID": "HF001",
+          "responses": 93,
+          "average_rating": 3.12
+        },
+        {
+          "FacilityID": "HF012",
+          "responses": 97,
+          "average_rating": 3.08
+        },
+        {
+          "FacilityID": "HF002",
+          "responses": 84,
+          "average_rating": 3.02
+        },
+        {
+          "FacilityID": "HF018",
+          "responses": 82,
+          "average_rating": 3.02
+        },
+        {
+          "FacilityID": "HF008",
+          "responses": 72,
+          "average_rating": 3.0
+        },
+        {
+          "FacilityID": "HF004",
+          "responses": 83,
+          "average_rating": 2.99
+        },
+        {
+          "FacilityID": "HF006",
+          "responses": 96,
+          "average_rating": 2.97
+        },
+        {
+          "FacilityID": "HF019",
+          "responses": 76,
+          "average_rating": 2.97
+        },
+        {
+          "FacilityID": "HF009",
+          "responses": 91,
+          "average_rating": 2.93
+        },
+        {
+          "FacilityID": "HF016",
+          "responses": 90,
+          "average_rating": 2.92
+        },
+        {
+          "FacilityID": "HF017",
+          "responses": 88,
+          "average_rating": 2.88
+        },
+        {
+          "FacilityID": "HF003",
+          "responses": 100,
+          "average_rating": 2.86
+        },
+        {
+          "FacilityID": "HF010",
+          "responses": 97,
+          "average_rating": 2.85
+        },
+        {
+          "FacilityID": "HF005",
+          "responses": 74,
+          "average_rating": 2.82
+        },
+        {
+          "FacilityID": "HF015",
+          "responses": 83,
+          "average_rating": 2.82
+        },
+        {
+          "FacilityID": "HF013",
+          "responses": 96,
+          "average_rating": 2.77
+        },
+        {
+          "FacilityID": "HF014",
+          "responses": 102,
+          "average_rating": 2.77
+        },
+        {
+          "FacilityID": "HF007",
+          "responses": 79,
+          "average_rating": 2.76
+        },
+        {
+          "FacilityID": "HF020",
+          "responses": 82,
+          "average_rating": 2.76
+        }
+      ],
+      "poor_by_appointment_month": [
+        {
+          "month": "2026-01",
+          "poor_feedback": 20
+        },
+        {
+          "month": "2026-02",
+          "poor_feedback": 25
+        },
+        {
+          "month": "2026-03",
+          "poor_feedback": 46
+        },
+        {
+          "month": "2026-04",
+          "poor_feedback": 35
+        },
+        {
+          "month": "2026-05",
+          "poor_feedback": 39
+        },
+        {
+          "month": "2026-06",
+          "poor_feedback": 38
+        },
+        {
+          "month": "2026-07",
+          "poor_feedback": 40
+        },
+        {
+          "month": "2026-08",
+          "poor_feedback": 30
+        },
+        {
+          "month": "2026-09",
+          "poor_feedback": 33
+        },
+        {
+          "month": "2026-10",
+          "poor_feedback": 42
+        },
+        {
+          "month": "2026-11",
+          "poor_feedback": 40
+        },
+        {
+          "month": "2026-12",
+          "poor_feedback": 34
+        },
+        {
+          "month": "Unknown",
+          "poor_feedback": 4861
+        }
+      ]
+    },
+    "operations": {
+      "bed_statuses": {
+        "Available": 2000
+      },
+      "equipment_count": 200,
+      "equipment_fields": [
+        "EquipmentID",
+        "EquipmentName",
+        "DepartmentID",
+        "FacilityID"
+      ],
+      "staff_roles": {
+        "Doctor": 350,
+        "Nurse": 700,
+        "Radiographer": 30,
+        "Laboratory Scientist": 40,
+        "Pharmacist": 50,
+        "Administrative Staff": 80
+      },
+      "doctor_duplicate_identical": true
+    },
+    "master_conflicts": {
+      "appointments": 4744,
+      "staff": 1187
+    },
+    "appointment_fields": [
+      "AppointmentID",
+      "PatientID",
+      "DoctorID",
+      "FacilityID",
+      "DepartmentID",
+      "Date",
+      "VisitType"
+    ],
+    "age_boundary": {
+      "above_65": 5487,
+      "65_or_above": 5701
+    },
+    "department_revenue_unknown": 7694903236,
+    "facility_rank_linked_only_sum": 694551320
+  },
+  "query_execution": {
+    "1": {
+      "title": "Retrieve all registered patients",
+      "status": "executed locally",
+      "row_count": 20000
+    },
+    "2": {
+      "title": "Count patients by gender",
+      "status": "executed locally",
+      "row_count": 2
+    },
+    "3": {
+      "title": "Count patients by province",
+      "status": "executed locally",
+      "row_count": 5
+    },
+    "4": {
+      "title": "Identify patients above 65 years",
+      "status": "executed locally",
+      "row_count": 5701
+    },
+    "5": {
+      "title": "Find patients with chronic diseases",
+      "status": "executed locally",
+      "row_count": 14929
+    },
+    "6": {
+      "title": "Retrieve patients covered by insurance",
+      "status": "executed locally",
+      "row_count": 20000
+    },
+    "7": {
+      "title": "Count patients by blood group.",
+      "status": "executed locally",
+      "row_count": 7
+    },
+    "8": {
+      "title": "List the youngest and oldest patients",
+      "status": "executed locally",
+      "row_count": 469
+    },
+    "9": {
+      "title": "Identify duplicate phone numbers",
+      "status": "executed locally",
+      "row_count": 10
+    },
+    "10": {
+      "title": "Calculate average patient age.",
+      "status": "executed locally",
+      "row_count": 1
+    },
+    "11": {
+      "title": "Count appointments by month",
+      "status": "executed locally",
+      "row_count": 12
+    },
+    "12": {
+      "title": "Identify busiest hospitals",
+      "status": "executed locally",
+      "row_count": 20
+    },
+    "13": {
+      "title": "Find busiest departments",
+      "status": "executed locally",
+      "row_count": 200
+    },
+    "14": {
+      "title": "Find doctors with the highest workload.",
+      "status": "executed locally",
+      "row_count": 350
+    },
+    "15": {
+      "title": "Identify referral patterns",
+      "status": "executed locally",
+      "row_count": 263
+    },
+    "16": {
+      "title": "Count emergency appointments",
+      "status": "executed locally",
+      "row_count": 1
+    },
+    "17": {
+      "title": "Calculate average appointments per doctor ",
+      "status": "executed locally",
+      "row_count": 1
+    },
+    "18": {
+      "title": "Retrieve appointments by province",
+      "status": "executed locally",
+      "row_count": 5
+    },
+    "19": {
+      "title": "Identify facilities with the highest patient volume.",
+      "status": "executed locally",
+      "row_count": 20
+    },
+    "20": {
+      "title": "Find peak consultation periods",
+      "status": "executed locally",
+      "row_count": 6
+    },
+    "21": {
+      "title": "Top diagnoses",
+      "status": "executed locally",
+      "row_count": 5
+    },
+    "22": {
+      "title": "Most requested laboratory tests. ",
+      "status": "executed locally",
+      "row_count": 4
+    },
+    "23": {
+      "title": "Most prescribed medications.",
+      "status": "executed locally",
+      "row_count": 5
+    },
+    "24": {
+      "title": "Average admission duration",
+      "status": "executed locally",
+      "row_count": 1
+    },
+    "25": {
+      "title": "Disease severity distribution",
+      "status": "executed locally",
+      "row_count": 3
+    },
+    "26": {
+      "title": "Laboratory test utilization",
+      "status": "executed locally",
+      "row_count": 4
+    },
+    "27": {
+      "title": "Prescription trends",
+      "status": "executed locally",
+      "row_count": 13
+    },
+    "28": {
+      "title": "Referral destinations",
+      "status": "executed locally",
+      "row_count": 20
+    },
+    "29": {
+      "title": "Admission rate by diagnosis",
+      "status": "executed locally",
+      "row_count": 5
+    },
+    "30": {
+      "title": "Clinical workload by department",
+      "status": "executed locally",
+      "row_count": 43
+    },
+    "31": {
+      "title": "Revenue by facility",
+      "status": "executed locally",
+      "row_count": 21
+    },
+    "32": {
+      "title": "Revenue by department",
+      "status": "executed locally",
+      "row_count": 201
+    },
+    "33": {
+      "title": "Revenue by service",
+      "status": "not implemented in source"
+    },
+    "34": {
+      "title": "Insurance claims by provider",
+      "status": "executed locally",
+      "row_count": 4
+    },
+    "35": {
+      "title": "Outstanding payments",
+      "status": "executed locally",
+      "row_count": 11887,
+      "balance_sum": 919947405
+    },
+    "36": {
+      "title": "Average billing amount",
+      "status": "executed locally",
+      "row_count": 1
+    },
+    "37": {
+      "title": "Monthly revenue trend ",
+      "status": "executed locally",
+      "row_count": 12
+    },
+    "38": {
+      "title": "Payment methods",
+      "status": "executed locally",
+      "row_count": 4
+    },
+    "39": {
+      "title": "Top revenue-generating hospitals",
+      "status": "executed locally",
+      "row_count": 10
+    },
+    "40": {
+      "title": "Financial performance ranking",
+      "status": "executed locally",
+      "row_count": 20
+    }
+  },
+  "financial_source_groups": {
+    "31": [
+      {
+        "facility_id": "Unknown",
+        "collected_revenue": 7694903236
+      },
+      {
+        "facility_id": "HF006",
+        "collected_revenue": 40224830
+      },
+      {
+        "facility_id": "HF011",
+        "collected_revenue": 39810993
+      },
+      {
+        "facility_id": "HF013",
+        "collected_revenue": 39515650
+      },
+      {
+        "facility_id": "HF010",
+        "collected_revenue": 37969003
+      },
+      {
+        "facility_id": "HF001",
+        "collected_revenue": 37488307
+      },
+      {
+        "facility_id": "HF014",
+        "collected_revenue": 36612652
+      },
+      {
+        "facility_id": "HF008",
+        "collected_revenue": 35661969
+      },
+      {
+        "facility_id": "HF020",
+        "collected_revenue": 35007484
+      },
+      {
+        "facility_id": "HF012",
+        "collected_revenue": 34927093
+      },
+      {
+        "facility_id": "HF003",
+        "collected_revenue": 34719109
+      },
+      {
+        "facility_id": "HF016",
+        "collected_revenue": 34389340
+      },
+      {
+        "facility_id": "HF009",
+        "collected_revenue": 33901803
+      },
+      {
+        "facility_id": "HF002",
+        "collected_revenue": 32943974
+      },
+      {
+        "facility_id": "HF015",
+        "collected_revenue": 32587105
+      },
+      {
+        "facility_id": "HF004",
+        "collected_revenue": 31801977
+      },
+      {
+        "facility_id": "HF007",
+        "collected_revenue": 31739881
+      },
+      {
+        "facility_id": "HF017",
+        "collected_revenue": 31679505
+      },
+      {
+        "facility_id": "HF019",
+        "collected_revenue": 31354603
+      },
+      {
+        "facility_id": "HF018",
+        "collected_revenue": 31233892
+      },
+      {
+        "facility_id": "HF005",
+        "collected_revenue": 30982150
+      }
+    ],
+    "32": [
+      {
+        "department_id": "Unknown",
+        "collected_revenue": 7694903236
+      },
+      {
+        "department_id": "DEP181",
+        "collected_revenue": 5681113
+      },
+      {
+        "department_id": "DEP016",
+        "collected_revenue": 5290208
+      },
+      {
+        "department_id": "DEP030",
+        "collected_revenue": 5164929
+      },
+      {
+        "department_id": "DEP163",
+        "collected_revenue": 5101379
+      },
+      {
+        "department_id": "DEP068",
+        "collected_revenue": 5061657
+      },
+      {
+        "department_id": "DEP167",
+        "collected_revenue": 4987593
+      },
+      {
+        "department_id": "DEP190",
+        "collected_revenue": 4965717
+      },
+      {
+        "department_id": "DEP193",
+        "collected_revenue": 4914919
+      },
+      {
+        "department_id": "DEP074",
+        "collected_revenue": 4852222
+      },
+      {
+        "department_id": "DEP117",
+        "collected_revenue": 4835484
+      },
+      {
+        "department_id": "DEP176",
+        "collected_revenue": 4776091
+      },
+      {
+        "department_id": "DEP034",
+        "collected_revenue": 4767167
+      },
+      {
+        "department_id": "DEP087",
+        "collected_revenue": 4759285
+      },
+      {
+        "department_id": "DEP032",
+        "collected_revenue": 4731241
+      },
+      {
+        "department_id": "DEP180",
+        "collected_revenue": 4680419
+      },
+      {
+        "department_id": "DEP060",
+        "collected_revenue": 4670910
+      },
+      {
+        "department_id": "DEP115",
+        "collected_revenue": 4661222
+      },
+      {
+        "department_id": "DEP050",
+        "collected_revenue": 4621256
+      },
+      {
+        "department_id": "DEP098",
+        "collected_revenue": 4616429
+      },
+      {
+        "department_id": "DEP154",
+        "collected_revenue": 4598882
+      },
+      {
+        "department_id": "DEP182",
+        "collected_revenue": 4505604
+      },
+      {
+        "department_id": "DEP111",
+        "collected_revenue": 4501469
+      },
+      {
+        "department_id": "DEP037",
+        "collected_revenue": 4488411
+      },
+      {
+        "department_id": "DEP095",
+        "collected_revenue": 4485486
+      },
+      {
+        "department_id": "DEP134",
+        "collected_revenue": 4472844
+      },
+      {
+        "department_id": "DEP126",
+        "collected_revenue": 4464401
+      },
+      {
+        "department_id": "DEP076",
+        "collected_revenue": 4459907
+      },
+      {
+        "department_id": "DEP113",
+        "collected_revenue": 4420195
+      },
+      {
+        "department_id": "DEP055",
+        "collected_revenue": 4409038
+      },
+      {
+        "department_id": "DEP112",
+        "collected_revenue": 4385226
+      },
+      {
+        "department_id": "DEP009",
+        "collected_revenue": 4384940
+      },
+      {
+        "department_id": "DEP059",
+        "collected_revenue": 4380978
+      },
+      {
+        "department_id": "DEP170",
+        "collected_revenue": 4372013
+      },
+      {
+        "department_id": "DEP094",
+        "collected_revenue": 4348164
+      },
+      {
+        "department_id": "DEP135",
+        "collected_revenue": 4333795
+      },
+      {
+        "department_id": "DEP072",
+        "collected_revenue": 4329408
+      },
+      {
+        "department_id": "DEP025",
+        "collected_revenue": 4301837
+      },
+      {
+        "department_id": "DEP164",
+        "collected_revenue": 4284927
+      },
+      {
+        "department_id": "DEP010",
+        "collected_revenue": 4284446
+      },
+      {
+        "department_id": "DEP108",
+        "collected_revenue": 4269844
+      },
+      {
+        "department_id": "DEP071",
+        "collected_revenue": 4262096
+      },
+      {
+        "department_id": "DEP160",
+        "collected_revenue": 4255347
+      },
+      {
+        "department_id": "DEP140",
+        "collected_revenue": 4203421
+      },
+      {
+        "department_id": "DEP085",
+        "collected_revenue": 4199080
+      },
+      {
+        "department_id": "DEP156",
+        "collected_revenue": 4179988
+      },
+      {
+        "department_id": "DEP031",
+        "collected_revenue": 4173911
+      },
+      {
+        "department_id": "DEP040",
+        "collected_revenue": 4095570
+      },
+      {
+        "department_id": "DEP042",
+        "collected_revenue": 4068920
+      },
+      {
+        "department_id": "DEP177",
+        "collected_revenue": 4026550
+      },
+      {
+        "department_id": "DEP086",
+        "collected_revenue": 4009543
+      },
+      {
+        "department_id": "DEP107",
+        "collected_revenue": 4008489
+      },
+      {
+        "department_id": "DEP105",
+        "collected_revenue": 4000458
+      },
+      {
+        "department_id": "DEP169",
+        "collected_revenue": 3993066
+      },
+      {
+        "department_id": "DEP089",
+        "collected_revenue": 3982762
+      },
+      {
+        "department_id": "DEP039",
+        "collected_revenue": 3936017
+      },
+      {
+        "department_id": "DEP120",
+        "collected_revenue": 3920381
+      },
+      {
+        "department_id": "DEP162",
+        "collected_revenue": 3907492
+      },
+      {
+        "department_id": "DEP036",
+        "collected_revenue": 3898048
+      },
+      {
+        "department_id": "DEP038",
+        "collected_revenue": 3874631
+      },
+      {
+        "department_id": "DEP159",
+        "collected_revenue": 3861380
+      },
+      {
+        "department_id": "DEP152",
+        "collected_revenue": 3860801
+      },
+      {
+        "department_id": "DEP130",
+        "collected_revenue": 3858700
+      },
+      {
+        "department_id": "DEP136",
+        "collected_revenue": 3855896
+      },
+      {
+        "department_id": "DEP145",
+        "collected_revenue": 3853566
+      },
+      {
+        "department_id": "DEP070",
+        "collected_revenue": 3843548
+      },
+      {
+        "department_id": "DEP187",
+        "collected_revenue": 3841796
+      },
+      {
+        "department_id": "DEP178",
+        "collected_revenue": 3836513
+      },
+      {
+        "department_id": "DEP064",
+        "collected_revenue": 3793931
+      },
+      {
+        "department_id": "DEP197",
+        "collected_revenue": 3792281
+      },
+      {
+        "department_id": "DEP062",
+        "collected_revenue": 3779060
+      },
+      {
+        "department_id": "DEP101",
+        "collected_revenue": 3767663
+      },
+      {
+        "department_id": "DEP131",
+        "collected_revenue": 3760025
+      },
+      {
+        "department_id": "DEP044",
+        "collected_revenue": 3753151
+      },
+      {
+        "department_id": "DEP091",
+        "collected_revenue": 3723013
+      },
+      {
+        "department_id": "DEP123",
+        "collected_revenue": 3720885
+      },
+      {
+        "department_id": "DEP103",
+        "collected_revenue": 3705304
+      },
+      {
+        "department_id": "DEP093",
+        "collected_revenue": 3700590
+      },
+      {
+        "department_id": "DEP061",
+        "collected_revenue": 3686240
+      },
+      {
+        "department_id": "DEP146",
+        "collected_revenue": 3673298
+      },
+      {
+        "department_id": "DEP019",
+        "collected_revenue": 3652470
+      },
+      {
+        "department_id": "DEP056",
+        "collected_revenue": 3643807
+      },
+      {
+        "department_id": "DEP184",
+        "collected_revenue": 3634648
+      },
+      {
+        "department_id": "DEP200",
+        "collected_revenue": 3633794
+      },
+      {
+        "department_id": "DEP186",
+        "collected_revenue": 3625631
+      },
+      {
+        "department_id": "DEP066",
+        "collected_revenue": 3613298
+      },
+      {
+        "department_id": "DEP161",
+        "collected_revenue": 3602930
+      },
+      {
+        "department_id": "DEP192",
+        "collected_revenue": 3598957
+      },
+      {
+        "department_id": "DEP188",
+        "collected_revenue": 3598236
+      },
+      {
+        "department_id": "DEP027",
+        "collected_revenue": 3596699
+      },
+      {
+        "department_id": "DEP080",
+        "collected_revenue": 3581213
+      },
+      {
+        "department_id": "DEP024",
+        "collected_revenue": 3578891
+      },
+      {
+        "department_id": "DEP124",
+        "collected_revenue": 3567794
+      },
+      {
+        "department_id": "DEP017",
+        "collected_revenue": 3546936
+      },
+      {
+        "department_id": "DEP127",
+        "collected_revenue": 3545585
+      },
+      {
+        "department_id": "DEP065",
+        "collected_revenue": 3539919
+      },
+      {
+        "department_id": "DEP033",
+        "collected_revenue": 3538505
+      },
+      {
+        "department_id": "DEP002",
+        "collected_revenue": 3506183
+      },
+      {
+        "department_id": "DEP013",
+        "collected_revenue": 3495901
+      },
+      {
+        "department_id": "DEP015",
+        "collected_revenue": 3493352
+      },
+      {
+        "department_id": "DEP116",
+        "collected_revenue": 3485688
+      },
+      {
+        "department_id": "DEP097",
+        "collected_revenue": 3482490
+      },
+      {
+        "department_id": "DEP144",
+        "collected_revenue": 3480412
+      },
+      {
+        "department_id": "DEP078",
+        "collected_revenue": 3478563
+      },
+      {
+        "department_id": "DEP003",
+        "collected_revenue": 3435374
+      },
+      {
+        "department_id": "DEP175",
+        "collected_revenue": 3435081
+      },
+      {
+        "department_id": "DEP069",
+        "collected_revenue": 3407947
+      },
+      {
+        "department_id": "DEP073",
+        "collected_revenue": 3392685
+      },
+      {
+        "department_id": "DEP143",
+        "collected_revenue": 3390919
+      },
+      {
+        "department_id": "DEP051",
+        "collected_revenue": 3390790
+      },
+      {
+        "department_id": "DEP090",
+        "collected_revenue": 3382149
+      },
+      {
+        "department_id": "DEP052",
+        "collected_revenue": 3342039
+      },
+      {
+        "department_id": "DEP153",
+        "collected_revenue": 3340304
+      },
+      {
+        "department_id": "DEP029",
+        "collected_revenue": 3338861
+      },
+      {
+        "department_id": "DEP139",
+        "collected_revenue": 3329313
+      },
+      {
+        "department_id": "DEP057",
+        "collected_revenue": 3299123
+      },
+      {
+        "department_id": "DEP077",
+        "collected_revenue": 3285158
+      },
+      {
+        "department_id": "DEP119",
+        "collected_revenue": 3281016
+      },
+      {
+        "department_id": "DEP198",
+        "collected_revenue": 3252189
+      },
+      {
+        "department_id": "DEP083",
+        "collected_revenue": 3251026
+      },
+      {
+        "department_id": "DEP005",
+        "collected_revenue": 3247568
+      },
+      {
+        "department_id": "DEP004",
+        "collected_revenue": 3241142
+      },
+      {
+        "department_id": "DEP106",
+        "collected_revenue": 3231536
+      },
+      {
+        "department_id": "DEP121",
+        "collected_revenue": 3224204
+      },
+      {
+        "department_id": "DEP171",
+        "collected_revenue": 3224197
+      },
+      {
+        "department_id": "DEP081",
+        "collected_revenue": 3204876
+      },
+      {
+        "department_id": "DEP026",
+        "collected_revenue": 3193626
+      },
+      {
+        "department_id": "DEP088",
+        "collected_revenue": 3177975
+      },
+      {
+        "department_id": "DEP125",
+        "collected_revenue": 3166702
+      },
+      {
+        "department_id": "DEP199",
+        "collected_revenue": 3161540
+      },
+      {
+        "department_id": "DEP194",
+        "collected_revenue": 3129236
+      },
+      {
+        "department_id": "DEP046",
+        "collected_revenue": 3124384
+      },
+      {
+        "department_id": "DEP148",
+        "collected_revenue": 3086081
+      },
+      {
+        "department_id": "DEP195",
+        "collected_revenue": 3085525
+      },
+      {
+        "department_id": "DEP067",
+        "collected_revenue": 3077788
+      },
+      {
+        "department_id": "DEP006",
+        "collected_revenue": 3073807
+      },
+      {
+        "department_id": "DEP028",
+        "collected_revenue": 3010799
+      },
+      {
+        "department_id": "DEP043",
+        "collected_revenue": 3004854
+      },
+      {
+        "department_id": "DEP041",
+        "collected_revenue": 3001560
+      },
+      {
+        "department_id": "DEP022",
+        "collected_revenue": 2995785
+      },
+      {
+        "department_id": "DEP102",
+        "collected_revenue": 2984503
+      },
+      {
+        "department_id": "DEP100",
+        "collected_revenue": 2981823
+      },
+      {
+        "department_id": "DEP191",
+        "collected_revenue": 2973031
+      },
+      {
+        "department_id": "DEP138",
+        "collected_revenue": 2953314
+      },
+      {
+        "department_id": "DEP168",
+        "collected_revenue": 2953128
+      },
+      {
+        "department_id": "DEP150",
+        "collected_revenue": 2939440
+      },
+      {
+        "department_id": "DEP012",
+        "collected_revenue": 2937477
+      },
+      {
+        "department_id": "DEP196",
+        "collected_revenue": 2926570
+      },
+      {
+        "department_id": "DEP147",
+        "collected_revenue": 2914828
+      },
+      {
+        "department_id": "DEP049",
+        "collected_revenue": 2908335
+      },
+      {
+        "department_id": "DEP008",
+        "collected_revenue": 2895846
+      },
+      {
+        "department_id": "DEP082",
+        "collected_revenue": 2890603
+      },
+      {
+        "department_id": "DEP045",
+        "collected_revenue": 2875270
+      },
+      {
+        "department_id": "DEP172",
+        "collected_revenue": 2871557
+      },
+      {
+        "department_id": "DEP179",
+        "collected_revenue": 2867456
+      },
+      {
+        "department_id": "DEP084",
+        "collected_revenue": 2864956
+      },
+      {
+        "department_id": "DEP114",
+        "collected_revenue": 2860990
+      },
+      {
+        "department_id": "DEP158",
+        "collected_revenue": 2796825
+      },
+      {
+        "department_id": "DEP155",
+        "collected_revenue": 2761303
+      },
+      {
+        "department_id": "DEP035",
+        "collected_revenue": 2751700
+      },
+      {
+        "department_id": "DEP099",
+        "collected_revenue": 2742023
+      },
+      {
+        "department_id": "DEP054",
+        "collected_revenue": 2738183
+      },
+      {
+        "department_id": "DEP141",
+        "collected_revenue": 2727831
+      },
+      {
+        "department_id": "DEP018",
+        "collected_revenue": 2705888
+      },
+      {
+        "department_id": "DEP183",
+        "collected_revenue": 2692673
+      },
+      {
+        "department_id": "DEP122",
+        "collected_revenue": 2656319
+      },
+      {
+        "department_id": "DEP104",
+        "collected_revenue": 2645722
+      },
+      {
+        "department_id": "DEP021",
+        "collected_revenue": 2620733
+      },
+      {
+        "department_id": "DEP157",
+        "collected_revenue": 2611089
+      },
+      {
+        "department_id": "DEP011",
+        "collected_revenue": 2578129
+      },
+      {
+        "department_id": "DEP185",
+        "collected_revenue": 2571836
+      },
+      {
+        "department_id": "DEP149",
+        "collected_revenue": 2567919
+      },
+      {
+        "department_id": "DEP166",
+        "collected_revenue": 2544867
+      },
+      {
+        "department_id": "DEP096",
+        "collected_revenue": 2544475
+      },
+      {
+        "department_id": "DEP053",
+        "collected_revenue": 2521760
+      },
+      {
+        "department_id": "DEP058",
+        "collected_revenue": 2512824
+      },
+      {
+        "department_id": "DEP020",
+        "collected_revenue": 2510275
+      },
+      {
+        "department_id": "DEP137",
+        "collected_revenue": 2493381
+      },
+      {
+        "department_id": "DEP109",
+        "collected_revenue": 2445472
+      },
+      {
+        "department_id": "DEP023",
+        "collected_revenue": 2427553
+      },
+      {
+        "department_id": "DEP129",
+        "collected_revenue": 2398039
+      },
+      {
+        "department_id": "DEP165",
+        "collected_revenue": 2385166
+      },
+      {
+        "department_id": "DEP075",
+        "collected_revenue": 2370748
+      },
+      {
+        "department_id": "DEP007",
+        "collected_revenue": 2337012
+      },
+      {
+        "department_id": "DEP063",
+        "collected_revenue": 2323022
+      },
+      {
+        "department_id": "DEP118",
+        "collected_revenue": 2262021
+      },
+      {
+        "department_id": "DEP174",
+        "collected_revenue": 2255133
+      },
+      {
+        "department_id": "DEP014",
+        "collected_revenue": 2237222
+      },
+      {
+        "department_id": "DEP132",
+        "collected_revenue": 2236483
+      },
+      {
+        "department_id": "DEP110",
+        "collected_revenue": 2232548
+      },
+      {
+        "department_id": "DEP189",
+        "collected_revenue": 2218886
+      },
+      {
+        "department_id": "DEP133",
+        "collected_revenue": 2187371
+      },
+      {
+        "department_id": "DEP128",
+        "collected_revenue": 2143290
+      },
+      {
+        "department_id": "DEP173",
+        "collected_revenue": 2070959
+      },
+      {
+        "department_id": "DEP142",
+        "collected_revenue": 2068797
+      },
+      {
+        "department_id": "DEP079",
+        "collected_revenue": 2049603
+      },
+      {
+        "department_id": "DEP047",
+        "collected_revenue": 2006718
+      },
+      {
+        "department_id": "DEP092",
+        "collected_revenue": 2000934
+      },
+      {
+        "department_id": "DEP048",
+        "collected_revenue": 1821624
+      },
+      {
+        "department_id": "DEP001",
+        "collected_revenue": 1821311
+      },
+      {
+        "department_id": "DEP151",
+        "collected_revenue": 1332998
+      }
+    ],
+    "38": [
+      {
+        "Method": "Card",
+        "payment_count": 15145,
+        "total_paid": 2115489446
+      },
+      {
+        "Method": "Mobile Money",
+        "payment_count": 15016,
+        "total_paid": 2104779310
+      },
+      {
+        "Method": "Insurance",
+        "payment_count": 14944,
+        "total_paid": 2094324407
+      },
+      {
+        "Method": "Cash",
+        "payment_count": 14895,
+        "total_paid": 2074861393
+      }
+    ],
+    "40": [
+      {
+        "FacilityID": "HF006",
+        "total_billed": 43624779,
+        "collected_revenue": 40224830,
+        "outstanding_amount": 3399949,
+        "revenue_rank": 1
+      },
+      {
+        "FacilityID": "HF011",
+        "total_billed": 44206632,
+        "collected_revenue": 39810993,
+        "outstanding_amount": 4395639,
+        "revenue_rank": 2
+      },
+      {
+        "FacilityID": "HF013",
+        "total_billed": 43547211,
+        "collected_revenue": 39515650,
+        "outstanding_amount": 4031561,
+        "revenue_rank": 3
+      },
+      {
+        "FacilityID": "HF010",
+        "total_billed": 42083403,
+        "collected_revenue": 37969003,
+        "outstanding_amount": 4114400,
+        "revenue_rank": 4
+      },
+      {
+        "FacilityID": "HF001",
+        "total_billed": 41131133,
+        "collected_revenue": 37488307,
+        "outstanding_amount": 3642826,
+        "revenue_rank": 5
+      },
+      {
+        "FacilityID": "HF014",
+        "total_billed": 41353389,
+        "collected_revenue": 36612652,
+        "outstanding_amount": 4740737,
+        "revenue_rank": 6
+      },
+      {
+        "FacilityID": "HF008",
+        "total_billed": 39631932,
+        "collected_revenue": 35661969,
+        "outstanding_amount": 3969963,
+        "revenue_rank": 7
+      },
+      {
+        "FacilityID": "HF020",
+        "total_billed": 38613123,
+        "collected_revenue": 35007484,
+        "outstanding_amount": 3605639,
+        "revenue_rank": 8
+      },
+      {
+        "FacilityID": "HF012",
+        "total_billed": 37873737,
+        "collected_revenue": 34927093,
+        "outstanding_amount": 2946644,
+        "revenue_rank": 9
+      },
+      {
+        "FacilityID": "HF003",
+        "total_billed": 38561818,
+        "collected_revenue": 34719109,
+        "outstanding_amount": 3842709,
+        "revenue_rank": 10
+      },
+      {
+        "FacilityID": "HF016",
+        "total_billed": 38233042,
+        "collected_revenue": 34389340,
+        "outstanding_amount": 3843702,
+        "revenue_rank": 11
+      },
+      {
+        "FacilityID": "HF009",
+        "total_billed": 37237343,
+        "collected_revenue": 33901803,
+        "outstanding_amount": 3335540,
+        "revenue_rank": 12
+      },
+      {
+        "FacilityID": "HF002",
+        "total_billed": 36922248,
+        "collected_revenue": 32943974,
+        "outstanding_amount": 3978274,
+        "revenue_rank": 13
+      },
+      {
+        "FacilityID": "HF015",
+        "total_billed": 36362642,
+        "collected_revenue": 32587105,
+        "outstanding_amount": 3775537,
+        "revenue_rank": 14
+      },
+      {
+        "FacilityID": "HF004",
+        "total_billed": 35357464,
+        "collected_revenue": 31801977,
+        "outstanding_amount": 3555487,
+        "revenue_rank": 15
+      },
+      {
+        "FacilityID": "HF007",
+        "total_billed": 36005995,
+        "collected_revenue": 31739881,
+        "outstanding_amount": 4266114,
+        "revenue_rank": 16
+      },
+      {
+        "FacilityID": "HF017",
+        "total_billed": 35687381,
+        "collected_revenue": 31679505,
+        "outstanding_amount": 4007876,
+        "revenue_rank": 17
+      },
+      {
+        "FacilityID": "HF019",
+        "total_billed": 35046077,
+        "collected_revenue": 31354603,
+        "outstanding_amount": 3691474,
+        "revenue_rank": 18
+      },
+      {
+        "FacilityID": "HF018",
+        "total_billed": 34790615,
+        "collected_revenue": 31233892,
+        "outstanding_amount": 3556723,
+        "revenue_rank": 19
+      },
+      {
+        "FacilityID": "HF005",
+        "total_billed": 34863475,
+        "collected_revenue": 30982150,
+        "outstanding_amount": 3881325,
+        "revenue_rank": 20
+      }
+    ]
+  }
+}

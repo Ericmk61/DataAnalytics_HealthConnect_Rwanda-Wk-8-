@@ -1,0 +1,6 @@
+Check,Scenario,Expected result,Actual result,Outcome,Evidence type
+P01,Exact Collected Revenue card,"8,389,454,556",8389454556 visible in supplied card,Pass,Direct screenshot observation
+P02,Financial group controls and facility slicer,"HF006 40,224,830; DEP181 5,681,113; relevant charts respond and restore when cleared",User confirms both amounts and financial slicer response and clearing,Pass,User confirmation plus source controls
+P03,Six DAX definitions and referenced base counts,Registered doctors; mean Rating; distinct BedID; response rows; occupied over total; Comment Poor responses,All six definitions match the intended metrics; base dependencies supplied,Pass,Formula review against source definitions
+P04,Feedback month order,January through December in chronological order,Confirmed,Pass,Confirmed
+P05,Patient selection clearing,Original patient charts restored after clearing Male or Female selection,Confirmed,Pass,Confirmed
