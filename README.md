@@ -1,47 +1,86 @@
-# HealthConnect Rwanda | Week 8 Submission Package
+# HealthConnect Rwanda Healthcare Analytics
 
-**AnalystLab Africa · Data Analytics track**
+## Week 8 Upgrade
 
-Start with the [Executive Summary](01_Reports/HealthConnect_Week8_Task14_Executive_Summary.docx), then read the [Final Analytics Report](01_Reports/HealthConnect_Week8_Task5_Final_Analytics_Report.docx). The [presentation](02_Presentation/HealthConnect_Week8_Task12_Analytics_Presentation.pptx) includes speaker notes for an individual walkthrough of about 7½ minutes.
+This repository contains the Week 8 version of the HealthConnect Rwanda Data Analytics project, developed as part of AnalystLab Africa.
 
-## Project question
+It builds on the SQL analysis, Power BI dashboard testing and refinements completed in Week 7. This upgrade brings the validated findings together in a final analytics report, executive summary, business recommendations and presentation.
 
-**How can HealthConnect Clinic use data and AI to reduce missed appointments and improve the patient support experience?**
+## Progression from Week 7
 
-Start by recording whether each booked visit was attended, cancelled, rescheduled, or missed. The 5,000 booking records establish a baseline for appointment volume; they cannot establish a no-show rate. Once attendance outcomes are recorded consistently, pilot reminders and easier rescheduling, then measure whether they reduce missed visits. Use the feedback findings to guide patient support improvements and assess whether an AI tool adds value after the baseline is in place.
+Week 7 focused on checking KPI definitions and source totals, correcting financial chart grouping, and testing dashboard filters.
 
-## What is included
+Week 8 develops that foundation through:
+
+- A final KPI summary with clear definitions and supporting evidence.
+- Business insights covering appointment management, patient experience, finances and hospital operations.
+- Recommendations informed by the available data.
+- A final analytics report, executive summary and presentation.
+
+The [Week 7 testing record](06_Testing_Evidence/HealthConnect_Week7_Testing_Record.md) documents the earlier checks and corrections.
+
+Earlier project versions are available through [my GitHub repositories](https://github.com/Ericmk61?tab=repositories).
+
+## Tools Used
+
+- **Power Query:** Data preparation, table consolidation and data type management.
+- **MySQL:** SQL analysis, joins, aggregations and KPI checks.
+- **Power BI:** Data modelling, DAX measures, interactive dashboards and filter testing.
+
+## Dashboard Pages
+
+The Power BI report contains six pages:
+
+1. Executive Dashboard
+2. Patient Analytics
+3. Clinical Analytics
+4. Financial Dashboard
+5. Operational Dashboard
+6. Patient Experience Dashboard
+
+## Key Figures
+
+| Measure | Value |
+| --- | ---: |
+| Registered patients | 20,000 |
+| Recorded appointments | 5,000 |
+| Facilities | 20 |
+| Doctors in the staff register | 350 |
+| Collected payments | RWF 8,389,454,556 |
+| Average patient satisfaction | 2.99 out of 5 |
+
+The satisfaction score covers 21,064 recorded feedback responses.
+
+## Business Recommendations
+
+The main appointment recommendation is to capture attendance outcomes consistently, including attended visits, missed appointments, cancellations and reschedules.
+
+A reliable attendance baseline would allow the clinic to evaluate reminder and rescheduling initiatives. Other recommendations include improving appointment links across the financial records and recording feedback submission dates to support analysis over time.
+
+## Repository Structure
 
 | Folder | Contents |
 | --- | --- |
-| `01_Reports/` | Final analytics report and executive summary |
-| `02_Presentation/` | Slides with speaker notes |
-| `03_Dashboard/` | Instructions for adding the corrected Power BI file |
-| `04_SQL/` | MySQL analysis script |
-| `05_Task_Notes/` | KPI definitions, findings, recommendations, validation, limitations, and handoff notes |
-| `06_Testing_Evidence/` | Week 7 testing record, Power BI checks, screenshots, measure definitions, and source verification |
+| [01_Reports](01_Reports/) | Final analytics report and executive summary |
+| [02_Presentation](02_Presentation/) | Project presentation and supporting material |
+| [03_Dashboard](03_Dashboard/) | Final Power BI dashboard |
+| [04_SQL](04_SQL/) | MySQL analysis script |
+| [05_Task_Notes](05_Task_Notes/) | KPI definitions, analysis, recommendations and validation notes |
+| [06_Testing_Evidence](06_Testing_Evidence/) | Testing records, screenshots, measure definitions and source verification |
 
-## Week 8 task index
+## Main Project Files
 
-| Task | Deliverable | File |
-| --- | --- | --- |
-| 1 | Transition from Week 7 | [HealthConnect_Week8_Task1_Transition.md](05_Task_Notes/HealthConnect_Week8_Task1_Transition.md) |
-| 2 | Integration readiness | [HealthConnect_Week8_Task2_Integration_Readiness.md](05_Task_Notes/HealthConnect_Week8_Task2_Integration_Readiness.md) |
-| 3 | Final KPI check | [HealthConnect_Week8_Task3_Final_KPI_Check.md](05_Task_Notes/HealthConnect_Week8_Task3_Final_KPI_Check.md) |
-| 4 | Dashboard validation | [HealthConnect_Week8_Task4_Dashboard_Validation.md](05_Task_Notes/HealthConnect_Week8_Task4_Dashboard_Validation.md) |
-| 5 | Final analytics report | [HealthConnect_Week8_Task5_Final_Analytics_Report.docx](01_Reports/HealthConnect_Week8_Task5_Final_Analytics_Report.docx) |
-| 6 | Appointment patterns | [HealthConnect_Week8_Task6_Appointment_Patterns.md](05_Task_Notes/HealthConnect_Week8_Task6_Appointment_Patterns.md) |
-| 7 | Business insights | [HealthConnect_Week8_Task7_Business_Insights.md](05_Task_Notes/HealthConnect_Week8_Task7_Business_Insights.md) |
-| 8 | Actionable recommendations | [HealthConnect_Week8_Task8_Actionable_Recommendations.md](05_Task_Notes/HealthConnect_Week8_Task8_Actionable_Recommendations.md) |
-| 9 | Decision brief | [HealthConnect_Week8_Task9_Decision_Brief.md](05_Task_Notes/HealthConnect_Week8_Task9_Decision_Brief.md) |
-| 10 | Handoff notes | [HealthConnect_Week8_Task10_Handoff_Notes.md](05_Task_Notes/HealthConnect_Week8_Task10_Handoff_Notes.md) |
-| 11 | Analytical limitations | [HealthConnect_Week8_Task11_Analytical_Limitations.md](05_Task_Notes/HealthConnect_Week8_Task11_Analytical_Limitations.md) |
-| 12 | Analytics presentation | [HealthConnect_Week8_Task12_Analytics_Presentation.pptx](02_Presentation/HealthConnect_Week8_Task12_Analytics_Presentation.pptx) |
-| 13 | Presentation review | [HealthConnect_Week8_Task13_Presentation_Review.md](05_Task_Notes/HealthConnect_Week8_Task13_Presentation_Review.md) |
-| 14 | Executive summary | [HealthConnect_Week8_Task14_Executive_Summary.docx](01_Reports/HealthConnect_Week8_Task14_Executive_Summary.docx) |
+- [Final Analytics Report](01_Reports/HealthConnect_Week8_Task5_Final_Analytics_Report.docx)
+- [Executive Summary](01_Reports/HealthConnect_Week8_Task14_Executive_Summary.docx)
+- [Power BI Dashboard](03_Dashboard/HealthConnect_Rwanda_Week8_Final.pbix)
+- [Analytics Presentation](02_Presentation/HealthConnect_Week8_Task12_Analytics_Presentation.pptx)
+- [MySQL Analysis](04_SQL/HealthConnect_Rwanda_SQL_Analysis.sql)
 
-## Before submitting
+## Data Interpretation
 
-1. Add the **corrected saved Power BI `.pbix`** in `03_Dashboard/`. Use the version where the financial charts show different collections by facility and department and the facility slicer updates and restores the charts. The earlier PBIX still has the old chart fields; the screenshots are evidence of the correction.
-2. Record the **5–10 minute individual presentation** using the slide notes and corrected dashboard. Include the recording or its link as directed by the submission form.
-3. Submit the materials through the official Week 8 form.
+- Appointment counts describe recorded bookings. Attendance outcomes are unavailable, so the extract cannot establish a no-show rate.
+- Facility and department collections cover payments linked to recorded appointments. Unmatched payments remain included in the overall collections total.
+- Collected payments and the monthly Revenue Summary are separate measures with different sources.
+- Bed occupancy describes the status snapshot in the supplied records. Assessing capacity over time requires dated occupancy data.
+
+The final report explains the findings, definitions and limitations in more detail.
